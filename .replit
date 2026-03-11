@@ -1,5 +1,6 @@
 language = "nix"
 run = ["npm", "start"]
+modules = ["nodejs-20"]
 
 [packager]
 language = "nodejs-npm"
@@ -11,3 +12,10 @@ channel = "stable-22_05"
 
 [unitTest]
 language = "nodejs"
+
+[deployment]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
