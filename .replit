@@ -15,7 +15,12 @@ language = "nodejs"
 
 [deployment]
 deploymentTarget = "cloudrun"
+build = ["sh", "-c", "npm install"]
+run = ["sh", "-c", "npm start"]
 
 [[ports]]
 localPort = 8080
 externalPort = 80
+
+[agent]
+expertMode = true
